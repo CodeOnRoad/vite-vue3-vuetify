@@ -1,0 +1,6 @@
+@use 'vuetify/settings' with (
+  // global
+  $color-pack: false,
+  $border-radius-root: 15px,
+  $line-height-root: 2,
+);
