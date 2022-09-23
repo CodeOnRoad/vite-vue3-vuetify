@@ -1,7 +1,8 @@
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
-import {createVuetify, ThemeDefinition} from 'vuetify'
+import type { ThemeDefinition } from 'vuetify'
+import { createVuetify } from 'vuetify'
 
 const customTheme: ThemeDefinition = {
   dark: false,
@@ -20,25 +21,21 @@ const customTheme: ThemeDefinition = {
   },
 }
 
-export default createVuetify(
-  {
-    defaults: {
-      global: {
-        ripple: true,
-        elevation: 2,
-      },
-      VBtn: { weight: 'black' },
-      VAppBar: {
-        elevation:16
-      }
+export default createVuetify({
+  defaults: {
+    global: {
+      ripple: true,
     },
-    theme: {
-      defaultTheme: 'customTheme',
-      themes: {customTheme,
-      },
+    VBtn: { weight: 'black' },
+  },
+  theme: {
+    defaultTheme: 'customTheme',
+    themes: {
+      customTheme,
     },
-    icons: {
-      // @ts-ignore
-      iconfont: 'mdi',
-    }}
-)
+  },
+  icons: {
+    // @ts-expect-error
+    iconfont: 'mdi',
+  },
+})

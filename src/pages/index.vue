@@ -1,3 +1,5 @@
 <template>
-  <v-card><v-card-text>Index</v-card-text></v-card>
+  <v-card>
+    <v-card-title>Index</v-card-title>
+  </v-card>
 </template>
