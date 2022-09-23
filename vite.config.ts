@@ -4,12 +4,11 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts';
+import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
 import vuetify from 'vite-plugin-vuetify'
-
 
 export default defineConfig({
   resolve: {
@@ -21,7 +20,10 @@ export default defineConfig({
     Vue({
       reactivityTransform: true,
     }),
-    vuetify({ autoImport: true,styles: { configFile: 'src/styles/vuetify.scss' }  }),
+    vuetify({
+      autoImport: true,
+      styles: { configFile: 'src/styles/vuetify.scss' },
+    }),
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages(),
@@ -29,16 +31,9 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: [
-        'vue',
-        'vue/macros',
-        'vue-router',
-        '@vueuse/core',
-      ],
+      imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
       dts: true,
-      dirs: [
-        './src/composables',
-      ],
+      dirs: ['./src/composables'],
       vueTemplate: true,
     }),
 
